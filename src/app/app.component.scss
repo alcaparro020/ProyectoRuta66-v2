@@ -1,0 +1,21 @@
+.menu1 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu1 a{
+    margin-right: 15px;
+}
+
+.divLogoNombre {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.divLogoNombre img {
+    margin-right: 15px;
+}
