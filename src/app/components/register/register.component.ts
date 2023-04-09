@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario/usuario.module';
 import { SQLserviceService } from 'src/app/services/sqlservice.service';
@@ -19,16 +19,6 @@ export class RegisterComponent {
   Telefono: number;
   Contrasenia: string;
   usuario: Usuario;
-
-  /*newUser = {
-    dni: null,
-    nombre: null,
-    apellidos: null,
-    edad: null,
-    email: null,
-    telefono: null,
-    contrasenia: null
-  };*/
 
   constructor(private sqlService: SQLserviceService, private router: Router) { }
 
