@@ -23,11 +23,11 @@ export class LoginComponent {
     });
   }
 
-  login() {
+  /*login() {
     const user = { email: this.email, password: this.password };
     this.sqlService.login(user).subscribe(data => {
       this.sqlService.setToken(data.token);
       this.router.navigate(["/"]);
     });
-  }
+  }*/
 }

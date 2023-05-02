@@ -1,0 +1,50 @@
+<div class="contenedor">
+    <div class="containerPerfil">
+        <div class="imgPerfil">
+            <div class="imagenYnombre">
+                <img src="../../../assets/img/personas.png" alt="imagenPerfil">
+                <h1>Administrador: {{administrador}}</h1>
+            </div>
+        </div>
+        <div class="datosUsuario">
+            <div class="datos">
+                <h1>Datos del Evento</h1>
+                <h2>Ubicacion:</h2>
+                <h3>{{ubicacion}}</h3>
+                <h2>Fecha:</h2>
+                <h3>{{fecha}}</h3>
+                <h2>Hora:</h2>
+                <h3>{{hora}}</h3>
+                <h2>Descripción:</h2>
+                <h3>{{descripcion}}</h3>
+                <h2>Permite Coches Modificados:</h2>
+                <h3>{{permite_Modificados=="1" ? "si":"no"}}</h3>
+                <h2>Permite Coches sin Homologar:</h2>
+                <h3>{{permite_Sin_Homologar=="1" ? "si":"no"}}</h3>
+            </div>
+        </div>
+        <div class="tablaCochesCliente">
+            <h1>Participantes</h1>
+            <div class="tablaCoches">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Email</th>
+                            <th>Telefono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios_Registrados">
+                            <td>{{usuario.nombre}}</td>
+                            <td>{{usuario.edad}}</td>
+                            <td>{{usuario.email}}</td>
+                            <td>{{usuario.telefono}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.sqlService.getUserLogged().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       if (!data.nombre) {
         this.login = "Iniciar sesión";
         this.rutaLogin = "/login";

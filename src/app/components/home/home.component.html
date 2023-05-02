@@ -1,6 +1,6 @@
 <div class="contenedor">
-    <div *ngFor="let i of [1,1,1,1]" class="evento">
-        <div id="caruselImagenes" class="carousel slide carrusel" data-bs-ride="carousel">
+    <div *ngFor="let evento of Eventos" class="evento">
+        <!--<div id="caruselImagenes" class="carousel slide carrusel" data-bs-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-bs-target="#caruselImagenes" data-bs-slide-to="0" class="active"></li>
                 <li data-bs-target="#caruselImagenes" data-bs-slide-to="1"></li>
@@ -25,15 +25,18 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+        </div>-->
+        <div class="contenedorImagenEvento">
+            <img class="imagenEvento" src="http://alvarogomezpracticas.es:9000/img_Eventos/{{evento.Imagenes}}" alt="{{evento.Imagenes}}">
         </div>
         <div class="informacionEvento">
-            <h3>Ubicacion</h3>
-            <h3>Fecha y hora</h3>
-            <h3>Mas informacion</h3>
+            <h4>{{evento.Ubicacion}}</h4>
+            <h4>{{evento.Fecha}} {{evento.Hora}}</h4>
+            <h4>{{evento.Descripcion}}</h4>
         </div>
         <div class="BotonesEvento">
-            <button type="button" class="btn btn-danger">Ver mas</button>
-            <button type="button" class="btn btn-danger">Registrarse</button>
+            <button type="button" class="btn btn-danger" [routerLink]="['/verEvento', evento.Id]">Ver mas</button>
+            <button type="button" class="btn btn-danger" [routerLink]="['/registroEvento', evento.Id]">Registrarse</button>
         </div>
     </div>
 </div>

@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../models/usuario/usuario.module';
 import { Observable } from 'rxjs';
 import { CookieService } from "ngx-cookie-service";
+import { Coche } from '../models/coche/coche.module';
+import { RegistroEventoModule } from '../models/registro-evento/registro-evento.module';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,66 @@ export class SQLserviceService {
     return this.http.post(`${this.baseUrl}post.php`, JSON.stringify(usuario));
   }
 
+  getUserDni(dni: string) {
+    const optUser = { Dni: dni }
+    return this.http.post(`${this.baseUrl}getUserDni.php`, JSON.stringify(optUser));
+  }
+
+  addCoche(coche: Coche) {
+    return this.http.post(`${this.baseUrl}addCoche.php`, JSON.stringify(coche));
+  }
+
+  modifyCoche(coche: Coche) {
+    return this.http.post(`${this.baseUrl}modifyCoche.php`, JSON.stringify(coche));
+  }
+
+  BorrarCoche(matricula: string) {
+    const algo4 = { matriculaBorrar: matricula };
+    return this.http.post(`${this.baseUrl}borrarCoche.php`, JSON.stringify(algo4));
+  }
+
+  getCoches(dni: string): Observable<any> {
+    const algo2 = { dniUser: dni };
+    return this.http.post(`${this.baseUrl}getCoches.php`, JSON.stringify(algo2));
+  }
+
+  getCoche(matricula: string) {
+    const algo3 = { matriculaCoche: matricula }
+    return this.http.post(`${this.baseUrl}getCoche.php`, JSON.stringify(algo3));
+  }
+
   loginUser(user: any): Observable<any> {
     return this.http.post(`${this.baseUrl}loginUser.php`, JSON.stringify(user));
+  }
+
+  guardarImagen(imagen: any) {
+    return this.http.post(`${this.baseUrl}guardarImagen.php`, JSON.stringify(imagen));
+  }
+
+  newEvento(evento: any) {
+    return this.http.post(`${this.baseUrl}newEvento.php`, JSON.stringify(evento));
+  }
+
+  getEventos() {
+    return this.http.post(`${this.baseUrl}getEventos.php`, JSON.stringify("evento"));
+  }
+
+  getEvento(id: string) {
+    const optEvento = { Id: id }
+    return this.http.post(`${this.baseUrl}getEvento.php`, JSON.stringify(optEvento));
+  }
+
+  getImagenesEventos(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.baseUrl}getImagenes.php`)
+  }
+
+  newRegistro(registro: RegistroEventoModule) {
+    return this.http.post(`${this.baseUrl}newRegistro.php`, JSON.stringify(registro));
+  }
+
+  getRegistros(idRegistro: number) {
+    const optRegistro = { Id: idRegistro }
+    return this.http.post(`${this.baseUrl}getRegistros.php`, JSON.stringify(optRegistro));
   }
 
   /**
@@ -46,7 +106,7 @@ export class SQLserviceService {
    */
   getUserLogged(): Observable<any> {
     const tokenU = this.getToken();
-    const algo = { token: tokenU};
+    const algo = { token: tokenU };
     // Aquí iría el endpoint para devolver el usuario para un token
     return this.http.post(`${this.baseUrl}getUser.php`, JSON.stringify(algo));
   }

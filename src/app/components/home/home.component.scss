@@ -21,10 +21,21 @@
 }
 
 .informacionEvento {
+    width: 30%;
     color: white;
     font-style: italic;
 }
 
 .BotonesEvento button{
     margin: 10px;
+}
+
+.contenedorImagenEvento {
+    width: 30% !important;
+    height: 250px !important;
+}
+
+.imagenEvento {
+    width: 100%;
+    height: 250px;
 }

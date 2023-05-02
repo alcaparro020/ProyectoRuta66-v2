@@ -26,21 +26,36 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>modelo</th>
-                            <th>marca</th>
-                            <th>matricula</th>
+                            <th>Matricula</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Color</th>
+                            <th>Modificado</th>
+                            <th>Homologado</th>
+                            <th>Herramientas</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">prueba1</td>
-                            <td>prueba2</td>
-                            <td>prueba3</td>
+                        <tr *ngFor="let coche of cochesUser">
+                            <td>{{coche.Matricula}}</td>
+                            <td>{{coche.Marca}}</td>
+                            <td>{{coche.Modelo}}</td>
+                            <td>{{coche.Color}}</td>
+                            <td>{{coche.Modificado=="1"?"si":"no"}}</td>
+                            <td>{{coche.Homologado=="1"?"si":"no"}}</td>
+                            <td class="Herramientas">
+                                <a [routerLink]="['/modificarCoche', coche.Matricula]"><i class="bi bi-file-earmark-break"></i></a>
+                                <a [routerLink]="['/borrarCoche', coche.Matricula]"><i class="bi bi-file-earmark-excel"></i></a>
+                            </td>
                         </tr>
                         <tr>
-                            <td scope="row">prueba1</td>
-                            <td>prueba2</td>
-                            <td>prueba3</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td><a href="/newCoche">Añadir Coche +</a></td>
                         </tr>
                     </tbody>
                 </table>
