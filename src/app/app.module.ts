@@ -18,6 +18,11 @@ import { BorrarCocheComponent } from './components/borrar-coche/borrar-coche.com
 import { NewEventoComponent } from './components/new-evento/new-evento.component';
 import { VerEventoComponent } from './components/ver-evento/ver-evento.component';
 import { RegistroEventoComponent } from './components/registro-evento/registro-evento.component';
+import { ModificarPerfilComponent } from './components/modificar-perfil/modificar-perfil.component';
+import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
+import { VerEventosCreadosComponent } from './components/ver-eventos-creados/ver-eventos-creados.component';
+import { ModificarEventoComponent } from './components/modificar-evento/modificar-evento.component';
+import { CancelarEventoComponent } from './components/cancelar-evento/cancelar-evento.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { RegistroEventoComponent } from './components/registro-evento/registro-e
     BorrarCocheComponent,
     NewEventoComponent,
     VerEventoComponent,
-    RegistroEventoComponent
+    RegistroEventoComponent,
+    ModificarPerfilComponent,
+    VerEventosComponent,
+    VerEventosCreadosComponent,
+    ModificarEventoComponent,
+    CancelarEventoComponent
   ],
   imports: [
     BrowserModule,

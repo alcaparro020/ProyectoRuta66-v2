@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { CookieService } from "ngx-cookie-service";
 import { Coche } from '../models/coche/coche.module';
 import { RegistroEventoModule } from '../models/registro-evento/registro-evento.module';
+import { Evento } from '../models/evento/evento.module';
+import { Eventomodificado } from '../interfaces/eventomodificado';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,10 @@ export class SQLserviceService {
   getUserDni(dni: string) {
     const optUser = { Dni: dni }
     return this.http.post(`${this.baseUrl}getUserDni.php`, JSON.stringify(optUser));
+  }
+
+  modifyUserDni(usuario: Usuario) {
+    return this.http.post(`${this.baseUrl}modifyUserDni.php`, JSON.stringify(usuario));
   }
 
   addCoche(coche: Coche) {
@@ -63,9 +69,23 @@ export class SQLserviceService {
     return this.http.post(`${this.baseUrl}getEventos.php`, JSON.stringify("evento"));
   }
 
+  getEventosDni(dni: string) {
+    const optEvento = { dni: dni }
+    return this.http.post(`${this.baseUrl}getEventosDni.php`, JSON.stringify(optEvento));
+  }
+
   getEvento(id: string) {
     const optEvento = { Id: id }
     return this.http.post(`${this.baseUrl}getEvento.php`, JSON.stringify(optEvento));
+  }
+
+  modificarEvento(evento: Eventomodificado) {
+    return this.http.post(`${this.baseUrl}modificarEvento.php`, JSON.stringify(evento));
+  }
+
+  cancelarEvento(id: string) {
+    const optEvento = { Id: id }
+    return this.http.post(`${this.baseUrl}cancelarEvento.php`, JSON.stringify(optEvento));
   }
 
   getImagenesEventos(): Observable<string[]> {
@@ -79,6 +99,11 @@ export class SQLserviceService {
   getRegistros(idRegistro: number) {
     const optRegistro = { Id: idRegistro }
     return this.http.post(`${this.baseUrl}getRegistros.php`, JSON.stringify(optRegistro));
+  }
+
+  getRegistrosDni(dni: string) {
+    const optEvento = { dni: dni }
+    return this.http.post(`${this.baseUrl}getRegistrosDni.php`, JSON.stringify(optEvento));
   }
 
   /**

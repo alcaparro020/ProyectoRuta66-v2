@@ -1,0 +1,16 @@
+<div class="contenedor">
+    <div *ngFor="let evento of eventos" class="evento">
+        <div class="contenedorImagenEvento">
+            <img class="imagenEvento" src="http://alvarogomezpracticas.es:9000/img_Eventos/{{evento.Imagenes}}" alt="{{evento.Imagenes}}">
+        </div>
+        <div class="informacionEvento">
+            <h4>{{evento.Ubicacion}}</h4>
+            <h4>{{evento.Fecha}} {{evento.Hora}}</h4>
+            <h4>{{evento.Descripcion}}</h4>
+        </div>
+        <div class="BotonesEvento">
+            <button type="button" class="btn btn-danger" [routerLink]="['/modificarEvento', evento.Id]">Modificar</button>
+            <button type="button" class="btn btn-danger" [routerLink]="['/cancelarEvento', evento.Id]">Cancelar</button>
+        </div>
+    </div>
+</div>

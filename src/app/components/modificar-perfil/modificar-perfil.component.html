@@ -1,0 +1,61 @@
+<section class="vh-200 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Modificar Perfil</h2>
+                            <p class="text-white-50 mb-5">Por favor introduzca los nuevos datos del usuario</p>
+
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="nombre" type="text" id="nombre"
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="nombre">Nombre</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="apellidos" type="text" id="apellidos"
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="apellidos">Apellidos</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="edad" type="number" id="edad"
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="edad">Edad</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="telefono" type="number" id="telefono"
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="telefono">Telefono</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="email" type="text" id="email"
+                                    class="form-control form-control-lg" />
+                                <label class="form-label" for="email">Email</label>
+                            </div>
+
+                            <button class="btn btn-outline-light btn-lg px-5"
+                                (click)="modificarPerfil()">Modificar Perfil</button>
+
+                            <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                                <a href="#!" class="text-white"><i class="bi bi-facebook fa-lg"></i></a>
+                                <a href="#!" class="text-white"><i class="bi bi-twitter fa-lg mx-4 px-2"></i></a>
+                                <a href="#!" class="text-white"><i class="bi bi-google fa-lg"></i></a>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mb-0">Powered by Alvaro
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

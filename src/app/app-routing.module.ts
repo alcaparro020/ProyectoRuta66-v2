@@ -10,6 +10,11 @@ import { BorrarCocheComponent } from './components/borrar-coche/borrar-coche.com
 import { NewEventoComponent } from './components/new-evento/new-evento.component';
 import { VerEventoComponent } from './components/ver-evento/ver-evento.component';
 import { RegistroEventoComponent } from './components/registro-evento/registro-evento.component';
+import { ModificarPerfilComponent } from './components/modificar-perfil/modificar-perfil.component';
+import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
+import { VerEventosCreadosComponent } from './components/ver-eventos-creados/ver-eventos-creados.component';
+import { ModificarEventoComponent } from './components/modificar-evento/modificar-evento.component';
+import { CancelarEventoComponent } from './components/cancelar-evento/cancelar-evento.component';
 
 const routes: Routes = [
   {path: "login", component:LoginComponent},
@@ -22,6 +27,11 @@ const routes: Routes = [
   {path: "newEvento", component:NewEventoComponent},
   {path: "verEvento/:Id", component:VerEventoComponent},
   {path: "registroEvento/:Id", component:RegistroEventoComponent},
+  {path: "modificarPerfil/:dni", component:ModificarPerfilComponent},
+  {path: "verEventos", component:VerEventosComponent},
+  {path: "verEventosCreados", component:VerEventosCreadosComponent},
+  {path: "modificarEvento/:Id", component:ModificarEventoComponent},
+  {path: "cancelarEvento/:Id", component:CancelarEventoComponent},
   {path: "", component:HomeComponent}
 ];
 

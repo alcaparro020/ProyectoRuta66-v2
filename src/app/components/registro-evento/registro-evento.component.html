@@ -16,7 +16,7 @@
                                 <select class="form-control" id="Matricula" name="Matricula" [(ngModel)]="matriculaSeleccionada">
                                     <option value="algo" selected>Seleccione un Coche</option>
                                     <option *ngFor="let coche of cochesUser" value="{{coche.Matricula}}">
-                                        {{coche.Matricula}}</option>
+                                        {{coche.Marca}} {{coche.Modelo}}</option>
                                 </select>
                             </div>
 
