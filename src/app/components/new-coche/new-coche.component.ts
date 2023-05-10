@@ -8,7 +8,7 @@ import { SQLserviceService } from 'src/app/services/sqlservice.service';
   templateUrl: './new-coche.component.html',
   styleUrls: ['./new-coche.component.scss']
 })
-export class NewCocheComponent {
+export class NewCocheComponent implements OnInit {
 
   Dni_Propietario: string;
   Matricula: string;
@@ -21,11 +21,15 @@ export class NewCocheComponent {
 
   constructor(private sqlService: SQLserviceService, private router: Router) { }
 
-  agregarCoche() {
+  ngOnInit(): void {
     this.sqlService.getUserLogged().subscribe(data => {
-      //console.log(data.dni);
+      console.log(data.dni);
       this.Dni_Propietario = data.dni;
     });
+  }
+
+  agregarCoche() {
+    
     let auxModificado;
     let auxHomologado;
     if (this.Modificado == true) {

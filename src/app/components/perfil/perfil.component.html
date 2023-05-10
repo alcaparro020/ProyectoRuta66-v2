@@ -3,12 +3,12 @@
         <div class="imgPerfil">
             <div class="imagenYnombre">
                 <img src="../../../assets/img/personas.png" alt="imagenPerfil">
-                <h1>{{usuario}}</h1>
+                <h4>{{usuario}} {{apellidos}}</h4>
             </div>
         </div>
         <div class="datosUsuario">
             <div class="datos">
-                <h1>Datos de {{usuario}}</h1>
+                <!-- <h1>Datos de {{usuario}}</h1>
                 <h2>Nombre:</h2>
                 <h3>{{usuario}}</h3>
                 <h2>Apellidos:</h2>
@@ -19,7 +19,29 @@
                 <h3>{{email}}</h3>
                 <h2>Telefono:</h2>
                 <h3>{{telefono}}</h3>
-                <a name="modificarPerfil" id="modificarPerfil" class="btn btn-danger" [routerLink]="['/modificarPerfil', dni]" role="button">Modificar Perfil</a>
+                <a name="modificarPerfil" id="modificarPerfil" class="btn btn-danger" [routerLink]="['/modificarPerfil', dni]" role="button">Modificar Perfil</a> -->
+                <table class="tablaDatos">
+                    <tbody>
+                        <tr>
+                            <th>Edad:</th>
+                            <td>{{edad}}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{email}}</td>
+                        </tr>
+                        <tr>
+                            <th>Telefono:</th>
+                            <td>{{telefono}}</td>
+                        </tr>
+                        <tr>
+                            <td><a name="modificarPerfil" id="modificarPerfil" class="enlaceTablaDatos"
+                                    [routerLink]="['/modificarPerfil', dni]" role="button">Modificar Perfil</a></td>
+                            <td><a name="DarseBaja" id="DarseBaja" class="enlaceTablaDatos" [routerLink]="['/darseBaja', dni]"
+                                    role="button">Darse de Baja</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="tablaCochesCliente">
@@ -45,8 +67,10 @@
                             <td>{{coche.Modificado=="1"?"si":"no"}}</td>
                             <td>{{coche.Homologado=="1"?"si":"no"}}</td>
                             <td class="Herramientas">
-                                <a [routerLink]="['/modificarCoche', coche.Matricula]"><i class="bi bi-file-earmark-break"></i></a>
-                                <a [routerLink]="['/borrarCoche', coche.Matricula]"><i class="bi bi-file-earmark-excel"></i></a>
+                                <a [routerLink]="['/modificarCoche', coche.Matricula]"><i
+                                        class="bi bi-file-earmark-break"></i></a>
+                                <a [routerLink]="['/borrarCoche', coche.Matricula]"><i
+                                        class="bi bi-file-earmark-excel"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -56,7 +80,7 @@
                             <td>---</td>
                             <td>---</td>
                             <td>---</td>
-                            <td><a href="/newCoche">Añadir Coche +</a></td>
+                            <td><a class="anadirCoche" href="/newCoche">Añadir Coche +</a></td>
                         </tr>
                     </tbody>
                 </table>

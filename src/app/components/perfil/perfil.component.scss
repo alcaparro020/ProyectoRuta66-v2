@@ -8,20 +8,24 @@
 }
 
 .imgPerfil {
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
     grid-row: 1;
     //background-color: blue;
 }
 
 .tablaCochesCliente {
-    grid-column: 1 / 3;
-    grid-row: 2 / 5;
+    grid-column: 1 / 4;
+    grid-row: 3 / 5;
     //background-color: rebeccapurple;
 }
 
+.tablaCoches {
+    padding: 40px;
+}
+
 .datosUsuario {
-    grid-column: 3 / 4;
-    grid-row: 1 / 5;
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
     //background-color: aqua;
 }
 
@@ -31,11 +35,22 @@
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .imagenYnombre img {
-    width: 35%;
+    width: 80px;
+    margin-left: 20px;
+}
+
+.imagenYnombre h4 {
+    margin-left: 10px;
+}
+
+.datos {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
 }
 
 .datos h1 {
@@ -55,11 +70,38 @@
     margin-top: 20px;
 }
 
-.Herramientas i{
+.Herramientas i {
     /*display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;*/
     margin-right: 30px;
+    color: #DC3545;
+}
+
+.anadirCoche {
+    color: #DC3545;
+}
+
+.tablaDatos {
+    background-color: #ebebeb;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+}
+
+.tablaDatos tr td {
+    padding: 30px;
+}
+
+.tablaDatos tr th {
+    padding: 30px;
+}
+
+.tablaDatos td {
+    text-align: end;
+}
+
+.enlaceTablaDatos {
+    color: #DC3545;
 }

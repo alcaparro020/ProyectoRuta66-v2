@@ -36,7 +36,7 @@
         </div>
         <div class="BotonesEvento">
             <button type="button" class="btn btn-danger" [routerLink]="['/verEvento', evento.Id]">Ver mas</button>
-            <button type="button" class="btn btn-danger" [routerLink]="['/registroEvento', evento.Id]">Registrarse</button>
+            <button [disabled]="!logeado" type="button" class="btn btn-danger" [routerLink]="['/registroEvento', evento.Id]">Registrarse</button>
         </div>
     </div>
 </div>

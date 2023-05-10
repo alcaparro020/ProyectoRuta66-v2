@@ -30,6 +30,11 @@ export class SQLserviceService {
     return this.http.post(`${this.baseUrl}modifyUserDni.php`, JSON.stringify(usuario));
   }
 
+  darseBaja(dni: string, IdEvento: string) {
+    const algo4 = { dni: dni, Id: IdEvento };
+    return this.http.post(`${this.baseUrl}darseBaja.php`, JSON.stringify(algo4));
+  }
+
   addCoche(coche: Coche) {
     return this.http.post(`${this.baseUrl}addCoche.php`, JSON.stringify(coche));
   }

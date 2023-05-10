@@ -23,6 +23,7 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { VerEventosCreadosComponent } from './components/ver-eventos-creados/ver-eventos-creados.component';
 import { ModificarEventoComponent } from './components/modificar-evento/modificar-evento.component';
 import { CancelarEventoComponent } from './components/cancelar-evento/cancelar-evento.component';
+import { DarseBajaComponent } from './components/darse-baja/darse-baja.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CancelarEventoComponent } from './components/cancelar-evento/cancelar-e
     VerEventosComponent,
     VerEventosCreadosComponent,
     ModificarEventoComponent,
-    CancelarEventoComponent
+    CancelarEventoComponent,
+    DarseBajaComponent
   ],
   imports: [
     BrowserModule,

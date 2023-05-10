@@ -3,12 +3,12 @@
         <div class="imgPerfil">
             <div class="imagenYnombre">
                 <img src="../../../assets/img/personas.png" alt="imagenPerfil">
-                <h1>Administrador: {{administrador}}</h1>
+                <h4>Administrador: {{administrador}}</h4>
             </div>
         </div>
         <div class="datosUsuario">
             <div class="datos">
-                <h1>Datos del Evento</h1>
+                <!-- <h1>Datos del Evento</h1>
                 <h2>Ubicacion:</h2>
                 <h3>{{ubicacion}}</h3>
                 <h2>Fecha:</h2>
@@ -20,7 +20,39 @@
                 <h2>Permite Coches Modificados:</h2>
                 <h3>{{permite_Modificados=="1" ? "si":"no"}}</h3>
                 <h2>Permite Coches sin Homologar:</h2>
-                <h3>{{permite_Sin_Homologar=="1" ? "si":"no"}}</h3>
+                <h3>{{permite_Sin_Homologar=="1" ? "si":"no"}}</h3> -->
+                <table class="tablaDatos">
+                    <tbody>
+                        <tr>
+                            <th>Ubicacion:</th>
+                            <td>{{ubicacion}}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha:</th>
+                            <td>{{fecha}}</td>
+                        </tr>
+                        <tr>
+                            <th>Hora:</th>
+                            <td>{{hora}}</td>
+                        </tr>
+                        <tr>
+                            <th>Descripción:</th>
+                            <td>{{descripcion}}</td>
+                        </tr>
+                        <tr>
+                            <th>Numero de Plazas:</th>
+                            <td>{{plazas}}</td>
+                        </tr>
+                        <tr>
+                            <th>Permite Coches Modificados:</th>
+                            <td>{{permite_Modificados=="1" ? "si":"no"}}</td>
+                        </tr>
+                        <tr>
+                            <th>Permite Coches sin Homologar:</th>
+                            <td>{{permite_Sin_Homologar=="1" ? "si":"no"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="tablaCochesCliente">

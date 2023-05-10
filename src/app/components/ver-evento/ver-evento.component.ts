@@ -17,6 +17,7 @@ export class VerEventoComponent implements OnInit {
   fecha: string;
   hora: string;
   descripcion: string;
+  plazas: string;
   permite_Modificados: string;
   permite_Sin_Homologar: string;
   usuarios_Registrados: UserRegistrado[];
@@ -34,6 +35,7 @@ export class VerEventoComponent implements OnInit {
       this.fecha = data.Fecha;
       this.hora = data.Hora;
       this.descripcion = data.Descripcion;
+      this.plazas = data.Numero_Plazas;
       this.permite_Modificados = data.Permite_Modificados;
       this.permite_Sin_Homologar = data.Permite_Sin_Homologar;
 

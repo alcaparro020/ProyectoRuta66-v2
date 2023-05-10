@@ -70,8 +70,8 @@ export class ModificarEventoComponent implements OnInit {
       "IdEvento": this.Id_Evento!,
       "Imagenes": this.Img_Name,
       "Ubicacion": this.Ubicacion,
-      "Permite_Modificados": this.Permite_Modificados,
-      "Permite_Sin_Homologar": this.Permite_Sin_Homologar,
+      "Permite_Modificados": auxPermite_Modificado,
+      "Permite_Sin_Homologar": auxPermite_Sin_Homologado,
       "Numero_Plazas": this.Num_Plazas
     };
     console.log(this.Evento);

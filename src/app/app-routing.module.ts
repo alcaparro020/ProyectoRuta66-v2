@@ -15,6 +15,7 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { VerEventosCreadosComponent } from './components/ver-eventos-creados/ver-eventos-creados.component';
 import { ModificarEventoComponent } from './components/modificar-evento/modificar-evento.component';
 import { CancelarEventoComponent } from './components/cancelar-evento/cancelar-evento.component';
+import { DarseBajaComponent } from './components/darse-baja/darse-baja.component';
 
 const routes: Routes = [
   {path: "login", component:LoginComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: "verEventosCreados", component:VerEventosCreadosComponent},
   {path: "modificarEvento/:Id", component:ModificarEventoComponent},
   {path: "cancelarEvento/:Id", component:CancelarEventoComponent},
+  {path: "darseBaja/:dni", component:DarseBajaComponent},
   {path: "", component:HomeComponent}
 ];
 
