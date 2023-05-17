@@ -17,10 +17,14 @@ export class RegistroEventoComponent implements OnInit {
   cochesUser: Coche[];
   matriculaSeleccionada: string;
   registro: RegistroEventoModule;
+  participarCoche: boolean;
 
   constructor(private sqlService: SQLserviceService, private rutaActiva: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.participarCoche = true;
+    let numParticipantes = 0;
+    let numEventoParticipantes = 0;
     this.idEvento = this.rutaActiva.snapshot.paramMap.get("Id");
     this.sqlService.getUserLogged().subscribe(data => {
       this.dni_usuario = data.dni;
@@ -29,6 +33,28 @@ export class RegistroEventoComponent implements OnInit {
         this.cochesUser = data;
       });
     });
+    this.sqlService.getRegistros(this.idEvento).subscribe((dato: any) => {
+      //console.log("1", dato.length)
+      numParticipantes = dato.length;
+      //console.log("1", numParticipantes)
+      this.sqlService.getEvento(this.idEvento).subscribe((dato: any) => {
+        //console.log("2", dato[8])
+        numEventoParticipantes = dato[8];
+        //console.log("2", numEventoParticipantes)
+        this.comprobarParticipantes(numParticipantes, numEventoParticipantes);
+      });
+    });
+  }
+
+  comprobarParticipantes(numPar, numEve) {
+    //console.log("numParticipantes", numPar)
+    //console.log("numEventoParticipantes", numEve)
+    if (numPar >= numEve) {
+      this.participarCoche = false;
+    } else {
+      this.participarCoche = true;
+    }
+    //console.log(this.participarCoche);
   }
 
   registrarParticipante() {

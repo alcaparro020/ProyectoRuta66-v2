@@ -11,7 +11,7 @@
                             <p class="text-white-50 mb-5">¿Quieres registrarte como participante de la expocición del
                                 evento?</p>
 
-                            <div class="form-outline form-white mb-4">
+                            <div class="form-outline form-white mb-4" *ngIf="participarCoche">
                                 <label class="form-label" for="Matricula">Selecciona coche para exponer:</label>
                                 <select class="form-control" id="Matricula" name="Matricula" [(ngModel)]="matriculaSeleccionada">
                                     <option value="algo" selected>Seleccione un Coche</option>
@@ -20,7 +20,7 @@
                                 </select>
                             </div>
 
-                            <button class="btn btn-outline-light btn-lg px-5"
+                            <button *ngIf="participarCoche" class="btn btn-outline-light btn-lg px-5"
                                 (click)="registrarParticipante()">Si</button>
 
                             <br>
