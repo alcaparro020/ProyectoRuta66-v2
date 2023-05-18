@@ -1,7 +1,41 @@
 <div class="contenedor">
+    <div [ngClass]="filtros ? 'filtros' : 'filtrosOcultos'">
+        <i class="bi bi-funnel" (click)="mostrarFiltros()"></i>
+        <div *ngIf="filtros" class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input [(ngModel)]="fecha"  type="date" class="form-control" name="fecha" id="fecha" aria-describedby="fecha"
+                placeholder="fecha">
+        </div>
+        <div *ngIf="filtros" class="form-group">
+            <label for="hora">Hora:</label>
+            <input [(ngModel)]="hora" type="time" class="form-control" name="hora" id="hora" aria-describedby="hora" placeholder="Hora">
+        </div>
+        <div *ngIf="filtros" class="form-group">
+            <label for="numeroPlazas">Numero de Plazas:</label>
+            <input [(ngModel)]="numPlazas" type="number" class="form-control" name="numeroPlazas" id="numeroPlazas"
+                aria-describedby="numeroPlazas" placeholder="Numero de Plazas">
+        </div>
+        <div *ngIf="filtros" class="form-check">
+            <label class="form-check-label">
+                <input [(ngModel)]="permiteModificados"  type="checkbox" class="form-check-input" name="permiteModificados" id="permiteModificados"
+                    value="true">
+                Permite Coches Modificados:
+            </label>
+        </div>
+        <div *ngIf="filtros" class="form-check">
+            <label class="form-check-label">
+                <input [(ngModel)]="permiteSinHomologar" type="checkbox" class="form-check-input" name="permiteSinHomolgar" id="permiteSinHomologar"
+                    value="true">
+                Permite Coches Sin Homologar:
+            </label>
+        </div>
+        <a *ngIf="filtros" name="filtrar" id="filtrar" class="btn btn-danger btnFiltrar" role="button"
+            (click)="filtrarEventos()">Filtrar</a>
+    </div>
     <div *ngFor="let evento of Eventos" class="evento">
         <div class="contenedorImagenEvento">
-            <img class="imagenEvento" src="http://alvarogomezpracticas.es:9000/img_Eventos/{{evento.Imagenes}}" alt="{{evento.Imagenes}}">
+            <img class="imagenEvento" src="http://alvarogomezpracticas.es:9000/img_Eventos/{{evento.Imagenes}}"
+                alt="{{evento.Imagenes}}">
         </div>
         <div class="informacionEvento">
             <h4>{{evento.Ubicacion}}</h4>
@@ -10,7 +44,8 @@
         </div>
         <div class="BotonesEvento">
             <button type="button" class="btn btn-danger" [routerLink]="['/verEvento', evento.Id]">Ver mas</button>
-            <button [disabled]="!logeado" type="button" class="btn btn-danger" [routerLink]="['/registroEvento', evento.Id]">Registrarse</button>
+            <button [disabled]="!logeado" type="button" class="btn btn-danger"
+                [routerLink]="['/registroEvento', evento.Id]">Registrarse</button>
         </div>
     </div>
 </div>

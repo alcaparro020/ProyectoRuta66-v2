@@ -74,6 +74,10 @@ export class SQLserviceService {
     return this.http.post(`${this.baseUrl}getEventos.php`, JSON.stringify("evento"));
   }
 
+  getEventosFiltros(objFiltro: any){
+    return this.http.post(`${this.baseUrl}getEventosFiltros.php`, JSON.stringify(objFiltro));
+  }
+
   getEventosDni(dni: string) {
     const optEvento = { dni: dni }
     return this.http.post(`${this.baseUrl}getEventosDni.php`, JSON.stringify(optEvento));

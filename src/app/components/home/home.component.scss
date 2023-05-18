@@ -39,3 +39,25 @@
     width: 100%;
     height: 250px;
 }
+
+.filtros {
+    width: 25%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+}
+
+.filtrosOcultos {
+    width: 50px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #ebebeb;
+    border-radius: 50px;
+    box-shadow: 6px 5px 6px;
+}
+
+.filtrosOcultos i {
+    margin-left: 7px;
+}
