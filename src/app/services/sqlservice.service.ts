@@ -115,6 +115,11 @@ export class SQLserviceService {
     return this.http.post(`${this.baseUrl}getRegistrosDni.php`, JSON.stringify(optEvento));
   }
 
+  borrarParticipante(idParticipante: string, idEvento: string){
+    const optBorrarParticipante = { idParticipante: idParticipante, idEvento: idEvento };
+    return this.http.post(`${this.baseUrl}borrarParticipante.php`, JSON.stringify(optBorrarParticipante));
+  }
+
   /**
    * A partid de aqui son cosas para iniciar sesion
    */

@@ -1,0 +1,117 @@
+.containerPerfil {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    align-items: center;
+    //background-color: black;
+}
+
+.imgPerfil {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    //background-color: blue;
+}
+
+.tablaCochesCliente {
+    grid-column: 1 / 4;
+    grid-row: 3 / 5;
+    //background-color: rebeccapurple;
+}
+
+.tablaCochesCliente h1 {
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.tablaCochesCliente h2 {
+    padding-left: 40px;
+}
+
+.tablaCoches {
+    padding: 40px;
+    padding-top: 0;
+}
+
+.datosUsuario {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+    //background-color: aqua;
+}
+
+.imagenYnombre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.imagenYnombre img {
+    width: 80px;
+    margin-left: 20px;
+}
+
+.imagenYnombre h4 {
+    margin-left: 10px;
+}
+
+.datos {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.datos h1 {
+    text-decoration: overline underline;
+}
+
+.datos h2 {
+    font-style: italic;
+}
+
+.datos h3 {
+    text-align: end;
+    margin-right: 20px;
+}
+
+.contenedor {
+    margin-top: 20px;
+}
+
+.Herramientas i {
+    /*display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;*/
+    margin-right: 30px;
+    color: #DC3545;
+}
+
+.anadirCoche {
+    color: #DC3545;
+}
+
+.tablaDatos {
+    background-color: #ebebeb;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+}
+
+.tablaDatos tr td {
+    padding: 30px;
+}
+
+.tablaDatos tr th {
+    padding: 30px;
+}
+
+.tablaDatos td {
+    text-align: end;
+}
+
+.enlaceTablaDatos {
+    color: #DC3545;
+}

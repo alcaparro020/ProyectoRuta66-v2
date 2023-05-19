@@ -1,0 +1,41 @@
+.evento {
+    background-color: rgb(39, 37, 37);
+    margin: 20px;
+    border-radius: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.carrusel {
+    width: 30% !important;
+    height: 250px !important;
+}
+
+.carrusel img {
+    width: 100%;
+    height: 250px;
+}
+
+.informacionEvento {
+    width: 30%;
+    color: white;
+    font-style: italic;
+}
+
+.BotonesEvento button{
+    margin: 10px;
+}
+
+.contenedorImagenEvento {
+    width: 30% !important;
+    height: 250px !important;
+}
+
+.imagenEvento {
+    width: 100%;
+    height: 250px;
+}

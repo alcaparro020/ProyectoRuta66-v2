@@ -16,6 +16,9 @@ import { VerEventosCreadosComponent } from './components/ver-eventos-creados/ver
 import { ModificarEventoComponent } from './components/modificar-evento/modificar-evento.component';
 import { CancelarEventoComponent } from './components/cancelar-evento/cancelar-evento.component';
 import { DarseBajaComponent } from './components/darse-baja/darse-baja.component';
+import { VerEventosAdminComponent } from './components/ver-eventos-admin/ver-eventos-admin.component';
+import { VerEventoAdminComponent } from './components/ver-evento-admin/ver-evento-admin.component';
+import { BorrarParticipanteAdminComponent } from './components/borrar-participante-admin/borrar-participante-admin.component';
 
 const routes: Routes = [
   {path: "login", component:LoginComponent},
@@ -34,6 +37,9 @@ const routes: Routes = [
   {path: "modificarEvento/:Id", component:ModificarEventoComponent},
   {path: "cancelarEvento/:Id", component:CancelarEventoComponent},
   {path: "darseBaja/:dni", component:DarseBajaComponent},
+  {path: "verEventosAdmin", component:VerEventosAdminComponent},
+  {path: "verEventoAdmin/:Id", component:VerEventoAdminComponent},
+  {path: "borrarParticipanteAdmin/:idParticipante/:Id", component:BorrarParticipanteAdminComponent},
   {path: "", component:HomeComponent}
 ];
 

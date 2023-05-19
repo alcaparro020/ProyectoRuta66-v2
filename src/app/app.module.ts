@@ -24,6 +24,9 @@ import { VerEventosCreadosComponent } from './components/ver-eventos-creados/ver
 import { ModificarEventoComponent } from './components/modificar-evento/modificar-evento.component';
 import { CancelarEventoComponent } from './components/cancelar-evento/cancelar-evento.component';
 import { DarseBajaComponent } from './components/darse-baja/darse-baja.component';
+import { VerEventosAdminComponent } from './components/ver-eventos-admin/ver-eventos-admin.component';
+import { VerEventoAdminComponent } from './components/ver-evento-admin/ver-evento-admin.component';
+import { BorrarParticipanteAdminComponent } from './components/borrar-participante-admin/borrar-participante-admin.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { DarseBajaComponent } from './components/darse-baja/darse-baja.component
     VerEventosCreadosComponent,
     ModificarEventoComponent,
     CancelarEventoComponent,
-    DarseBajaComponent
+    DarseBajaComponent,
+    VerEventosAdminComponent,
+    VerEventoAdminComponent,
+    BorrarParticipanteAdminComponent
   ],
   imports: [
     BrowserModule,

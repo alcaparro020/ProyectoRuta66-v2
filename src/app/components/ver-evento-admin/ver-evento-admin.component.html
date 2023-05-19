@@ -1,0 +1,35 @@
+<div class="tablaCochesCliente">
+    <h1>Participantes</h1>
+    <h2>Numero de Plazas con Coches: {{plazas}}</h2>
+    <div class="tablaCoches">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Dni</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Participante</th>
+                    <th>Matricula</th>
+                    <th>Herramientas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios_Registrados">
+                    <td>{{usuario.dni}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.edad}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.telefono}}</td>
+                    <td>{{usuario.participante==1 ? "si":"no"}}</td>
+                    <td>{{usuario.matriculaCoche}}</td>
+                    <td class="Herramientas">
+                        <a [routerLink]="['/borrarParticipanteAdmin', usuario.idParticipante, usuario.evento]"><i
+                                class="bi bi-file-earmark-excel"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

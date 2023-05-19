@@ -9,10 +9,13 @@ import { isEmpty } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
   title = 'ProyectoRuta66-v2';
   login = "Iniciar sesion";
   rutaLogin = "/login";
   logeado = false;
+  admin = false;
+
   constructor(private sqlService: SQLserviceService, private cookies: CookieService) { }
 
   ngOnInit() {
@@ -26,6 +29,10 @@ export class AppComponent implements OnInit {
         this.rutaLogin = "";
         this.logeado = true;
       }
+      if (data.id == 15) {
+        this.admin = true;
+      }
+
       //this.sqlService.setToken(data.id);
       //this.router.navigate(["/"]);
     });
