@@ -11,7 +11,7 @@
             <input [(ngModel)]="hora" type="time" class="form-control" name="hora" id="hora" aria-describedby="hora" placeholder="Hora">
         </div>
         <div *ngIf="filtros" class="form-group">
-            <label for="numeroPlazas">Numero de Plazas:</label>
+            <label for="numeroPlazas">Número de Plazas:</label>
             <input [(ngModel)]="numPlazas" type="number" class="form-control" name="numeroPlazas" id="numeroPlazas"
                 aria-describedby="numeroPlazas" placeholder="Numero de Plazas">
         </div>
@@ -43,7 +43,7 @@
             <h4>{{evento.Descripcion}}</h4>
         </div>
         <div class="BotonesEvento">
-            <button type="button" class="btn btn-danger" [routerLink]="['/verEvento', evento.Id]">Ver mas</button>
+            <button type="button" class="btn btn-danger" [routerLink]="['/verEvento', evento.Id]">Ver más</button>
             <button [disabled]="!logeado" type="button" class="btn btn-danger"
                 [routerLink]="['/registroEvento', evento.Id]">Registrarse</button>
         </div>
