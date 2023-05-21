@@ -11,37 +11,37 @@
                             <p class="text-white-50 mb-5">Por favor introduzca su email y contraseña</p>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Dni" type="text" id="typeDniX"
+                                <input [ngClass]="dniValid ? 'bien' : 'error'" [(ngModel)]="Dni" type="text" id="typeDniX"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="typeDniX">Dni</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Nombre" type="text" id="typeNombreX"
+                                <input [ngClass]="nombreValid ? 'bien' : 'error'" [(ngModel)]="Nombre" type="text" id="typeNombreX"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="typeNombreX">Nombre</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Apellidos" type="text" id="typeApellidosX"
+                                <input [ngClass]="apellidosValid ? 'bien' : 'error'" [(ngModel)]="Apellidos" type="text" id="typeApellidosX"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="typeApellidosX">Apellidos</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Edad" type="number" id="typeEdadX"
+                                <input [ngClass]="edadValid ? 'bien' : 'error'" [(ngModel)]="Edad" type="number" id="typeEdadX"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="typeEdadX">Edad</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Email" type="email" id="typeEmailX"
+                                <input [ngClass]="emailValid ? 'bien' : 'error'" [(ngModel)]="Email" type="email" id="typeEmailX"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="typeEmailX">Email</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Telefono" type="tel" id="typeTelefonoX"
+                                <input [ngClass]="telefonoValid ? 'bien' : 'error'" [(ngModel)]="Telefono" type="tel" id="typeTelefonoX"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="typeTelefonoX">Telefono</label>
                             </div>

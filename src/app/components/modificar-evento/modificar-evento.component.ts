@@ -25,6 +25,13 @@ export class ModificarEventoComponent implements OnInit {
   Evento: Eventomodificado;
   imageData: any;
 
+  ubicacionValid: boolean = true;
+  fechaValid: boolean = true;
+  horaValid: boolean = true;
+  descripcionValid: boolean = true;
+  numPlazasValid: boolean = true;
+  imgEventoValid: boolean = true;
+
   constructor(private sqlService: SQLserviceService, private rutaActiva: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -75,15 +82,18 @@ export class ModificarEventoComponent implements OnInit {
       "Numero_Plazas": this.Num_Plazas
     };
     console.log(this.Evento);
-    this.sqlService.guardarImagen(this.imageData).subscribe(datos => {
+    if (this.validateForm()) {
+      this.sqlService.guardarImagen(this.imageData).subscribe(datos => {
 
-      //console.log(datos);
-      this.sqlService.modificarEvento(this.Evento).subscribe(datos => {
         //console.log(datos);
-        this.router.navigate(["/home"]);
+        this.sqlService.modificarEvento(this.Evento).subscribe(datos => {
+          //console.log(datos);
+          this.router.navigate(["/home"]);
+        });
+  
       });
+    }
 
-    });
   }
 
   onFileSelected(event: any) {
@@ -100,5 +110,51 @@ export class ModificarEventoComponent implements OnInit {
         console.log(this.imageData);
       };
     }
+  }
+
+  validateForm(): boolean {
+    if (!this.Ubicacion || this.Ubicacion.trim().length === 0) {
+      this.ubicacionValid = false;
+      return false; // Ubicación vacía o solo espacios en blanco
+    } else {
+      this.ubicacionValid = true;
+    }
+
+    if (!this.Fecha) {
+      this.fechaValid = false;
+      return false; // Fecha no seleccionada
+    } else {
+      this.fechaValid = true;
+    }
+
+    if (!this.Hora) {
+      this.horaValid = false;
+      return false; // Hora vacía o solo espacios en blanco
+    } else {
+      this.horaValid = true;
+    }
+
+    if (!this.Descripcion || this.Descripcion.trim().length === 0) {
+      this.descripcionValid = false;
+      return false; // Descripción vacía o solo espacios en blanco
+    } else {
+      this.descripcionValid = true;
+    }
+
+    if (!this.Num_Plazas || this.Num_Plazas <= 0) {
+      this.numPlazasValid = false;
+      return false; // Número de plazas no válido
+    } else {
+      this.numPlazasValid = true;
+    }
+
+    if (!this.Img_Evento) {
+      this.imgEventoValid = false;
+      return false; // Archivo no seleccionado
+    } else {
+      this.imgEventoValid = true;
+    }
+
+    return true; // Todos los campos han pasado las validaciones
   }
 }

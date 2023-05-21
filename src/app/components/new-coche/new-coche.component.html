@@ -11,25 +11,25 @@
                             <p class="text-white-50 mb-5">Por favor introduzca los datos del coche</p>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Matricula" type="text" id="Matricula"
+                                <input [ngClass]="matriculaValidate ? 'bien' : 'error'" [(ngModel)]="Matricula" type="text" id="Matricula"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Matricula">Matricula</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Marca" type="text" id="Marca"
+                                <input [ngClass]="marcaValidate ? 'bien' : 'error'" [(ngModel)]="Marca" type="text" id="Marca"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Marca">Marca</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Modelo" type="text" id="Modelo"
+                                <input [ngClass]="modeloValidate ? 'bien' : 'error'" [(ngModel)]="Modelo" type="text" id="Modelo"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Modelo">Modelo</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Color" type="text" id="Color"
+                                <input [ngClass]="colorValidate ? 'bien' : 'error'" [(ngModel)]="Color" type="text" id="Color"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Color">Color</label>
                             </div>

@@ -12,37 +12,37 @@
                             <p class="text-white-50 mb-5">Por favor introduzca los datos del evento</p>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Ubicacion" type="text" id="Ubicacion"
+                                <input [ngClass]="ubicacionValid ? 'bien' : 'error'" [(ngModel)]="Ubicacion" type="text" id="Ubicacion"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Ubicacion">Ubicacion</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Fecha" type="date" id="Fecha"
+                                <input [ngClass]="fechaValid ? 'bien' : 'error'" [(ngModel)]="Fecha" type="date" id="Fecha"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Fecha">Fecha</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Hora" type="text" id="Hora"
+                                <input [ngClass]="horaValid ? 'bien' : 'error'" [(ngModel)]="Hora" type="time" id="Hora"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Hora">Hora</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <textarea [(ngModel)]="Descripcion" class="form-control form-control-lg"
+                                <textarea [ngClass]="descripcionValid ? 'bien' : 'error'" [(ngModel)]="Descripcion" class="form-control form-control-lg"
                                     name="Descripcion" id="Descripcion" rows="3"></textarea>
                                 <label class="form-label" for="Descripcion">Descripcion</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Num_Plazas" type="number" id="Num_Plazas"
+                                <input [ngClass]="numPlazasValid ? 'bien' : 'error'" [(ngModel)]="Num_Plazas" type="number" id="Num_Plazas"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Num_Plazas">Numero de Plazas</label>
                             </div>
 
                             <div class="form-group">
-                                <input (change)="onFileSelected($event)" [(ngModel)]="Img_Evento" type="file" class="form-control form-control-lg"
+                                <input [ngClass]="imgEventoValid ? 'bien' : 'error'" (change)="onFileSelected($event)" [(ngModel)]="Img_Evento" type="file" class="form-control form-control-lg"
                                     name="Img_Evento" id="Img_Evento" placeholder="Imagenes del evento"
                                     aria-describedby="Img_Evento">
                                 <label for="Img_Evento">Imagenes del evento</label>
