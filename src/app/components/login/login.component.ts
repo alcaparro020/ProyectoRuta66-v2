@@ -20,7 +20,7 @@ export class LoginComponent {
     const user = { email: this.email, password: this.password };
     if (this.validateForm()) {
       this.sqlService.loginUser(user).subscribe(data => {
-        console.log(data);
+        //console.log(data);
         this.sqlService.setToken(data.id);
         this.router.navigate(["/home"]);
       });
