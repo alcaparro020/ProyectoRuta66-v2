@@ -111,3 +111,46 @@
 .enlaceTablaDatos {
     color: #DC3545;
 }
+
+@media only screen and (max-width: 940px) {
+
+    .imgPerfil {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        //background-color: blue;
+    }
+
+    .datosUsuario {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        //background-color: aqua;
+    }
+
+    .tablaDatos tr td {
+        padding: 10px;
+    }
+    
+    .tablaDatos tr th {
+        padding: 10px;
+    }
+
+    .datos {
+        display: flex;
+        justify-content: center;
+        margin-right: 0px;
+    }
+
+    .datos table {
+        width: 90%;
+    }
+
+    .tablaCoches th {
+        padding-right: 50px;
+    }
+
+    .tablaCoches {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x: scroll;
+    }
+}

@@ -120,3 +120,17 @@
 .enlaceTablaDatos {
     color: #DC3545;
 }
+
+
+@media only screen and (max-width: 735px) {
+
+    .tablaCoches th {
+        padding-right: 50px;
+    }
+
+    .tablaCoches {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x: scroll;
+    }
+}
