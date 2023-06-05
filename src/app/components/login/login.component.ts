@@ -22,6 +22,9 @@ export class LoginComponent {
       this.sqlService.loginUser(user).subscribe(data => {
         //console.log(data);
         this.sqlService.setToken(data.id);
+
+        localStorage.setItem('refresh', 'true'); // Almacena un valor en el almacenamiento local
+    //this.router.navigate(['/ruta-destino']); // Realiza la navegación normalmente
         this.router.navigate(["/home"]);
       });
     }

@@ -43,6 +43,14 @@ export class HomeComponent {
       this.Eventos = data;
       //console.log(this.Eventos);
     });
+
+    const refresh = localStorage.getItem('refresh'); // Obtiene el valor del almacenamiento local
+
+    if (refresh === 'true') {
+      localStorage.removeItem('refresh'); // Elimina el valor del almacenamiento local para evitar el bucle infinito
+      location.reload(); // Realiza el refresco de la página
+    }
+
   }
 
   mostrarFiltros() {
