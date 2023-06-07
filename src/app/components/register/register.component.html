@@ -11,44 +11,58 @@
                             <p class="text-white-50 mb-5">Por favor introduzca su email y contraseña</p>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="dniValid ? 'bien' : 'error'" [(ngModel)]="Dni" type="text" id="typeDniX"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!dniValid">Este campo no puede estar vacio o no es correcto</p>
+                                <input [ngClass]="dniValid ? 'bien' : 'error'" [(ngModel)]="Dni" type="text"
+                                    id="typeDniX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typeDniX">DNI</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="nombreValid ? 'bien' : 'error'" [(ngModel)]="Nombre" type="text" id="typeNombreX"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!nombreValid">Este campo no puede estar vacio</p>
+                                <input [ngClass]="nombreValid ? 'bien' : 'error'" [(ngModel)]="Nombre" type="text"
+                                    id="typeNombreX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typeNombreX">Nombre</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="apellidosValid ? 'bien' : 'error'" [(ngModel)]="Apellidos" type="text" id="typeApellidosX"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!apellidosValid">Este campo no puede estar vacio</p>
+                                <input [ngClass]="apellidosValid ? 'bien' : 'error'" [(ngModel)]="Apellidos" type="text"
+                                    id="typeApellidosX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typeApellidosX">Apellidos</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="edadValid ? 'bien' : 'error'" [(ngModel)]="Edad" type="number" id="typeEdadX"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!edadValid">Este campo no puede estar vacio ni ser menor de 18
+                                </p>
+                                <input [ngClass]="edadValid ? 'bien' : 'error'" [(ngModel)]="Edad" type="number"
+                                    id="typeEdadX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typeEdadX">Edad</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="emailValid ? 'bien' : 'error'" [(ngModel)]="Email" type="email" id="typeEmailX"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!emailValid">Este campo no puede estar vacio o no es un email
+                                    correcto</p>
+                                <input [ngClass]="emailValid ? 'bien' : 'error'" [(ngModel)]="Email" type="email"
+                                    id="typeEmailX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typeEmailX">Email</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="telefonoValid ? 'bien' : 'error'" [(ngModel)]="Telefono" type="tel" id="typeTelefonoX"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!telefonoValid">Este campo no puede estar vacio o no es un
+                                    telefono
+                                    correcto</p>
+                                <input [ngClass]="telefonoValid ? 'bien' : 'error'" [(ngModel)]="Telefono" type="tel"
+                                    id="typeTelefonoX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typeTelefonoX">Telefono</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [(ngModel)]="Contrasenia" type="password" id="typePasswordX"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!contraseniaValid">Este campo no puede estar vacio o la
+                                    contraseña no
+                                    cumle los requisitos. La contraseña debe contener una letra mayuscula, una minuscula
+                                    y un caracter alfanumerico</p>
+                                <input [ngClass]="contraseniaValid ? 'bien' : 'error'" [(ngModel)]="Contrasenia"
+                                    type="password" id="typePasswordX" class="form-control form-control-lg" />
                                 <label class="form-label" for="typePasswordX">Contraseña</label>
                             </div>
 

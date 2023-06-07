@@ -11,43 +11,50 @@
                             <p class="text-white-50 mb-5">Por favor introduzca los datos del coche</p>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="matriculaValidate ? 'bien' : 'error'" [(ngModel)]="Matricula" type="text" id="Matricula"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!matriculaValidate">La matricula debe ser 4 numeros y 3 letras
+                                    mayusculas, ej. 1234 AAA</p>
+                                <input [ngClass]="matriculaValidate ? 'bien' : 'error'" [(ngModel)]="Matricula"
+                                    type="text" id="Matricula" class="form-control form-control-lg" />
                                 <label class="form-label" for="Matricula">Matrícula</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="marcaValidate ? 'bien' : 'error'" [(ngModel)]="Marca" type="text" id="Marca"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!marcaValidate">Este campo no puede estar vacio</p>
+                                <input [ngClass]="marcaValidate ? 'bien' : 'error'" [(ngModel)]="Marca" type="text"
+                                    id="Marca" class="form-control form-control-lg" />
                                 <label class="form-label" for="Marca">Marca</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="modeloValidate ? 'bien' : 'error'" [(ngModel)]="Modelo" type="text" id="Modelo"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!modeloValidate">Este campo no puede estar vacio</p>
+                                <input [ngClass]="modeloValidate ? 'bien' : 'error'" [(ngModel)]="Modelo" type="text"
+                                    id="Modelo" class="form-control form-control-lg" />
                                 <label class="form-label" for="Modelo">Modelo</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="colorValidate ? 'bien' : 'error'" [(ngModel)]="Color" type="text" id="Color"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!colorValidate">Este campo no puede estar vacio</p>
+                                <input [ngClass]="colorValidate ? 'bien' : 'error'" [(ngModel)]="Color" type="text"
+                                    id="Color" class="form-control form-control-lg" />
                                 <label class="form-label" for="Color">Color</label>
                             </div>
 
                             <div class="form-check">
-                              <label class="form-check-label">
-                                <input [(ngModel)]="Modificado" type="checkbox" class="form-check-input" name="Modificado" id="Modificado" value="checkedValue">
-                                Modificado
-                              </label>
+                                <label class="form-check-label">
+                                    <input [(ngModel)]="Modificado" type="checkbox" class="form-check-input"
+                                        name="Modificado" id="Modificado" value="checkedValue">
+                                    Modificado
+                                </label>
                             </div>
 
                             <br>
 
                             <div class="form-check">
-                              <label class="form-check-label">
-                                <input [(ngModel)]="Homologado" type="checkbox" class="form-check-input" name="Modificado" id="Modificado" value="checkedValue">
-                                Homologado
-                              </label>
+                                <label class="form-check-label">
+                                    <input [(ngModel)]="Homologado" type="checkbox" class="form-check-input"
+                                        name="Modificado" id="Modificado" value="checkedValue">
+                                    Homologado
+                                </label>
                             </div>
 
                             <br>
@@ -64,8 +71,8 @@
                                 <label class="form-label" for="Homologado">Homologado</label>
                             </div>-->
 
-                            <button class="btn btn-outline-light btn-lg px-5"
-                                (click)="ModificarCoche()">Nuevo Coche</button>
+                            <button class="btn btn-outline-light btn-lg px-5" (click)="ModificarCoche()">Nuevo
+                                Coche</button>
 
                             <div class="d-flex justify-content-center text-center mt-4 pt-1">
                                 <a href="#!" class="text-white"><i class="bi bi-facebook fa-lg"></i></a>

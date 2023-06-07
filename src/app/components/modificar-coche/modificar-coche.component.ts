@@ -80,35 +80,36 @@ export class ModificarCocheComponent implements OnInit {
 
   validateForm(): boolean {
     const matriculaPattern = /^\d{4}\s[A-Z]{3}$/;
+    let correcto = true;
 
     if (!this.Matricula || !matriculaPattern.test(this.Matricula)) {
       this.matriculaValidate = false;
-      return false; // Matrícula inválida o vacía
+      correcto = false; // Matrícula inválida o vacía
     } else {
       this.matriculaValidate = true;
     }
 
     if (!this.Marca || this.Marca.trim().length === 0) {
       this.marcaValidate = false
-      return false; // Marca vacía o solo espacios en blanco
+      correcto = false; // Marca vacía o solo espacios en blanco
     } else {
       this.marcaValidate = true;
     }
 
     if (!this.Modelo || this.Modelo.trim().length === 0) {
       this.modeloValidate = false;
-      return false; // Modelo vacío o solo espacios en blanco
+      correcto = false; // Modelo vacío o solo espacios en blanco
     } else {
       this.modeloValidate = true;
     }
 
     if (!this.Color || this.Color.trim().length === 0) {
       this.colorValidate = false;
-      return false; // Color vacío o solo espacios en blanco
+      correcto = false; // Color vacío o solo espacios en blanco
     } else {
       this.colorValidate = true;
     }
 
-    return true; // Todos los campos han pasado las validaciones
+    return correcto; // Todos los campos han pasado las validaciones
   }
 }

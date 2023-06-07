@@ -6,43 +6,53 @@
                     <div class="card-body p-5 text-center">
 
                         <div class="mb-md-5 mt-md-4 pb-5">
-                            
+
 
                             <h2 class="fw-bold mb-2 text-uppercase">Crear nuevo Evento</h2>
                             <p class="text-white-50 mb-5">Por favor introduzca los datos del evento</p>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="ubicacionValid ? 'bien' : 'error'" [(ngModel)]="Ubicacion" type="text" id="Ubicacion"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!ubicacionValid">Este campo no puede estar vacio</p>
+                                <input [ngClass]="ubicacionValid ? 'bien' : 'error'" [(ngModel)]="Ubicacion" type="text"
+                                    id="Ubicacion" class="form-control form-control-lg" />
                                 <label class="form-label" for="Ubicacion">Ubicacion</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="fechaValid ? 'bien' : 'error'" [(ngModel)]="Fecha" type="date" id="Fecha"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!fechaValid">Este campo no puede estar vacio o no es una fecha
+                                    valida</p>
+                                <input [ngClass]="fechaValid ? 'bien' : 'error'" [(ngModel)]="Fecha" type="date"
+                                    id="Fecha" class="form-control form-control-lg" />
                                 <label class="form-label" for="Fecha">Fecha</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
+                                <p class="error" *ngIf="!horaValid">Este campo no puede estar vacio o no es una hora
+                                    valida</p>
                                 <input [ngClass]="horaValid ? 'bien' : 'error'" [(ngModel)]="Hora" type="time" id="Hora"
                                     class="form-control form-control-lg" />
                                 <label class="form-label" for="Hora">Hora</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <textarea [ngClass]="descripcionValid ? 'bien' : 'error'" [(ngModel)]="Descripcion" class="form-control form-control-lg"
-                                    name="Descripcion" id="Descripcion" rows="3"></textarea>
+                                <p class="error" *ngIf="!descripcionValid">Este campo no puede estar vacio</p>
+                                <textarea [ngClass]="descripcionValid ? 'bien' : 'error'" [(ngModel)]="Descripcion"
+                                    class="form-control form-control-lg" name="Descripcion" id="Descripcion"
+                                    rows="3"></textarea>
                                 <label class="form-label" for="Descripcion">Descripción</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input [ngClass]="numPlazasValid ? 'bien' : 'error'" [(ngModel)]="Num_Plazas" type="number" id="Num_Plazas"
-                                    class="form-control form-control-lg" />
+                                <p class="error" *ngIf="!numPlazasValid">Este campo no puede estar vacio y debe ser mayor que 1</p>
+                                <input [ngClass]="numPlazasValid ? 'bien' : 'error'" [(ngModel)]="Num_Plazas"
+                                    type="number" id="Num_Plazas" class="form-control form-control-lg" />
                                 <label class="form-label" for="Num_Plazas">Numero de Plazas</label>
                             </div>
 
                             <div class="form-group">
-                                <input [ngClass]="imgEventoValid ? 'bien' : 'error'" (change)="onFileSelected($event)" [(ngModel)]="Img_Evento" type="file" class="form-control form-control-lg"
+                                <p class="error" *ngIf="!imgEventoValid">Este campo no puede estar vacio</p>
+                                <input [ngClass]="imgEventoValid ? 'bien' : 'error'" (change)="onFileSelected($event)"
+                                    [(ngModel)]="Img_Evento" type="file" class="form-control form-control-lg"
                                     name="Img_Evento" id="Img_Evento" placeholder="Imagenes del evento"
                                     aria-describedby="Img_Evento">
                                 <label for="Img_Evento">Imagenes del evento</label>
@@ -70,8 +80,9 @@
 
                             <br>
 
-                            <button type="submit" class="btn btn-outline-light btn-lg px-5" (click)="crearEvento()">Nuevo
-                                Coche</button>
+                            <button type="submit" class="btn btn-outline-light btn-lg px-5"
+                                (click)="crearEvento()">Nuevo
+                                Evento</button>
 
                             <div class="d-flex justify-content-center text-center mt-4 pt-1">
                                 <a href="#!" class="text-white"><i class="bi bi-facebook fa-lg"></i></a>

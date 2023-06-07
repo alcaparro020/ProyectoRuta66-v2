@@ -12,8 +12,10 @@
 
                             <form class="custom-porm" method="post">
                                 <div class="form-outline form-white mb-4">
-                                    <input [ngClass]="emailValid ? 'bien' : 'error'" type="email" id="email" class="form-control form-control-lg"
-                                        required="required" [(ngModel)]="email" name="email" />
+                                    <p class="error" *ngIf="!emailValid">Email no valido o incorrecto</p>
+                                    <input [ngClass]="emailValid ? 'bien' : 'error'" type="email" id="email"
+                                        class="form-control form-control-lg" required="required" [(ngModel)]="email"
+                                        name="email" />
                                     <label class="form-label" for="email">Email</label>
                                 </div>
 

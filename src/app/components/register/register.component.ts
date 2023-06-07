@@ -26,6 +26,7 @@ export class RegisterComponent {
   edadValid: boolean = true;
   telefonoValid: boolean = true;
   emailValid: boolean = true;
+  contraseniaValid: boolean = true;
 
   constructor(private sqlService: SQLserviceService, private router: Router) { }
 
@@ -47,47 +48,61 @@ export class RegisterComponent {
   validateForm(): boolean {
     const dniPattern = /^\d{8}[A-Za-z]$/;
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const contraseniaPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)\w+$/;
+    const telefonoPattern = /^\d{9}$/;
+
+    let correcto = true;
 
     if (!this.Dni || !dniPattern.test(this.Dni)) {
       this.dniValid = false;
-      return false; // DNI inválido o vacío
+      correcto = false; // DNI inválido o vacío
     } else {
       this.dniValid = true;
     }
 
     if (!this.Nombre || this.Nombre.trim().length === 0) {
       this.nombreValid = false;
-      return false; // Nombre vacío o solo espacios en blanco
+      correcto = false; // Nombre vacío o solo espacios en blanco
     } else {
       this.nombreValid = true;
     }
 
     if (!this.Apellidos || this.Apellidos.trim().length === 0) {
       this.apellidosValid = false;
-      return false; // Apellidos vacíos o solo espacios en blanco
+      correcto = false; // Apellidos vacíos o solo espacios en blanco
     } else {
       this.apellidosValid = true;
     }
 
     if (!this.Edad || this.Edad < 18) {
       this.edadValid = false;
-      return false; // Edad no especificada o menor de 18 años
+      correcto = false; // Edad no especificada o menor de 18 años
     } else {
       this.edadValid = true;
     }
 
-    // if (!this.telefono || this.telefono.trim().length === 0) {
-    //   return false; // Teléfono vacío o solo espacios en blanco
-    // }
+    if (!this.Telefono || !telefonoPattern.test(this.Telefono.toString())) {
+      this.telefonoValid = false;
+      correcto = false; // Email inválido o vacío
+    } else {
+      this.telefonoValid = true;
+    }
 
     if (!this.Email || !emailPattern.test(this.Email)) {
       this.emailValid = false;
-      return false; // Email inválido o vacío
+      correcto = false; // Email inválido o vacío
     } else {
       this.emailValid = true;
     }
 
-    return true; // Todos los campos han pasado las validaciones
+    if (!this.Contrasenia || !contraseniaPattern.test(this.Contrasenia)) {
+      this.contraseniaValid = false;
+      correcto = false; // Email inválido o vacío
+    } else {
+      this.contraseniaValid = true;
+    }
+
+    return correcto; // Todos los campos han pasado las validaciones
   }
 
 }

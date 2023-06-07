@@ -48,24 +48,25 @@ export class ModificarPerfilComponent implements OnInit {
 
   validateForm(): boolean {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let correcto = true;
 
     if (!this.nombre || this.nombre.trim().length === 0) {
       this.nombreValid = false;
-      return false; // Nombre vacío o solo espacios en blanco
+      correcto = false; // Nombre vacío o solo espacios en blanco
     } else {
       this.nombreValid = true;
     }
 
     if (!this.apellidos || this.apellidos.trim().length === 0) {
       this.apellidosValid = false;
-      return false; // Apellidos vacíos o solo espacios en blanco
+      correcto = false; // Apellidos vacíos o solo espacios en blanco
     } else {
       this.apellidosValid = true;
     }
 
     if (!this.edad || this.edad < 18) {
       this.edadValid = false;
-      return false; // Edad no especificada o menor de 18 años
+      correcto = false; // Edad no especificada o menor de 18 años
     } else {
       this.edadValid = true;
     }
@@ -76,12 +77,12 @@ export class ModificarPerfilComponent implements OnInit {
 
     if (!this.email || !emailPattern.test(this.email)) {
       this.emailValid = false;
-      return false; // Email inválido o vacío
+      correcto = false; // Email inválido o vacío
     } else {
       this.emailValid = true;
     }
 
-    return true; // Todos los campos han pasado las validaciones
+    return correcto; // Todos los campos han pasado las validaciones
   }
 
 }

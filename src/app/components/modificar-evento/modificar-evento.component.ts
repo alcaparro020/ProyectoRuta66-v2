@@ -90,7 +90,7 @@ export class ModificarEventoComponent implements OnInit {
           //console.log(datos);
           this.router.navigate(["/home"]);
         });
-  
+
       });
     }
 
@@ -113,48 +113,51 @@ export class ModificarEventoComponent implements OnInit {
   }
 
   validateForm(): boolean {
+
+    let correcto = true;
+
     if (!this.Ubicacion || this.Ubicacion.trim().length === 0) {
       this.ubicacionValid = false;
-      return false; // Ubicación vacía o solo espacios en blanco
+      correcto = false; // Ubicación vacía o solo espacios en blanco
     } else {
       this.ubicacionValid = true;
     }
 
     if (!this.Fecha) {
       this.fechaValid = false;
-      return false; // Fecha no seleccionada
+      correcto = false; // Fecha no seleccionada
     } else {
       this.fechaValid = true;
     }
 
     if (!this.Hora) {
       this.horaValid = false;
-      return false; // Hora vacía o solo espacios en blanco
+      correcto = false; // Hora vacía o solo espacios en blanco
     } else {
       this.horaValid = true;
     }
 
     if (!this.Descripcion || this.Descripcion.trim().length === 0) {
       this.descripcionValid = false;
-      return false; // Descripción vacía o solo espacios en blanco
+      correcto = false; // Descripción vacía o solo espacios en blanco
     } else {
       this.descripcionValid = true;
     }
 
     if (!this.Num_Plazas || this.Num_Plazas <= 0) {
       this.numPlazasValid = false;
-      return false; // Número de plazas no válido
+      correcto = false; // Número de plazas no válido
     } else {
       this.numPlazasValid = true;
     }
 
     if (!this.Img_Evento) {
       this.imgEventoValid = false;
-      return false; // Archivo no seleccionado
+      correcto = false; // Archivo no seleccionado
     } else {
       this.imgEventoValid = true;
     }
 
-    return true; // Todos los campos han pasado las validaciones
+    return correcto; // Todos los campos han pasado las validaciones
   }
 }

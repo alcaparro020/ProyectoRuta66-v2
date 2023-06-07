@@ -16,7 +16,7 @@ export class LoginComponent {
 
   constructor(private sqlService: SQLserviceService, private router: Router) { }
 
-  loginUserPhp(){
+  loginUserPhp() {
     const user = { email: this.email, password: this.password };
     if (this.validateForm()) {
       this.sqlService.loginUser(user).subscribe(data => {
@@ -24,7 +24,7 @@ export class LoginComponent {
         this.sqlService.setToken(data.id);
 
         localStorage.setItem('refresh', 'true'); // Almacena un valor en el almacenamiento local
-    //this.router.navigate(['/ruta-destino']); // Realiza la navegación normalmente
+        //this.router.navigate(['/ruta-destino']); // Realiza la navegación normalmente
         this.router.navigate(["/home"]);
       });
     }
@@ -34,7 +34,7 @@ export class LoginComponent {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!this.email || !emailPattern.test(this.email)) {
-      if (this.email=="admin") {
+      if (this.email == "admin") {
         this.emailValid = true;
       } else {
         this.emailValid = false;
